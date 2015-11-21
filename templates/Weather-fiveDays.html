@@ -1,4 +1,4 @@
-<div class="panel panel-primary" style="margin-top:30px;">
+<div class="panel panel-primary" style="margin-top:30px;" ng-controller="weatherController as _wc">
     <div class="panel-heading">
         <h3 class="panel-title">5-Day Forecast</h3>
     </div>
@@ -7,23 +7,17 @@
         This information is brought to you by www.something.com
     </div>
 
-    <table class="table">
+    <table class="table" ng-init="_wc.getFiveDaysData()">
         <tr>
             <th>Day</th>
             <th>High </th>
             <th>Low </th>
         </tr>
 
-        <tr>
-            <td>Product A</td>
-            <td>200</td>
-            <td>200</td>
-        </tr>
-
-        <tr>
-            <td>Product B</td>
-            <td>400</td>
-            <td>200</td>
+        <tr data-ng-repeat="(key, data) in _wc.data">
+            <td><b>{{data.day}}</b></td>
+            <td>{{data.high}}</td>
+            <td>{{data.low}}</td>
         </tr>
     </table>
 </div>

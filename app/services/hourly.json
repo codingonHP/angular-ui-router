@@ -1,0 +1,26 @@
+[
+    {
+        "time": "8AM",
+        "temp": 50
+    },
+    {
+        "time": "9AM",
+        "temp": 45
+    },
+    {
+        "time": "10AM",
+        "temp": 30
+    },
+    {
+        "time": "11AM",
+        "temp": 23
+    },
+    {
+        "time": "12AM",
+        "temp": 15
+    },
+    {
+        "time": "01 PM",
+        "temp": 50
+    }
+]
