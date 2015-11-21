@@ -3,34 +3,42 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>hello world</title>
+    <title>Sibling HTML world</title>
     <link rel="stylesheet" href="b.css">
+    <style>
+        .header {}
+
+        .nav {
+            width: 170px;
+            float: left;
+            height: 500px;
+            color: aliceblue;
+            overflow: hidden;
+        }
+
+        .section {
+            width: 800px;
+            float: left;
+            background-color: cadetblue;
+        }
+
+        .footer {}
+    </style>
 </head>
 
-<body ng-app="routerApp">
-    <div class="container">
-        <div>
-            <div class="btn btn-block btn-info">
-                <h2 style="text-align:center;"> Weather </h2>
-                <div class="row">
-                    <div class="col-md-2">
-                        <a ui-sref="home" class="btn btn-danger">Hourly forecast</a>
-                    </div>
-                    <div class="col-md-2"><a class="btn btn-danger" ui-sref="rangeForecast">5 day forecast</a></div>
-                </div>
-            </div>
+<body data-ng-app="siblingViewsMdl" class="container">
 
-            <ui-view></ui-view>
-        </div>
-    </div>
+    <!--These are all sibling views -->
+    <header class="header" ui-view="header"></header>
+    <nav ui-view="nav" class="nav btn btn-success"></nav>
+    <section ui-view="body" class='section'></section>
+    <footer ui-view="footer" class='footer'></footer>
 </body>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
 <script src="//cdn.jsdelivr.net/angular.ui-router/0.2.8/angular-ui-router.min.js"></script>
-<script src="app.js"></script>
+<script src="/app/modules/siblingViewsMdl.js"></script>
 <script src="global.js"></script>
-<script src="/app/controllers/weatherController.js"></script>
-<script src="/app/services/weatherService.js"></script>
 
 
 </html>
